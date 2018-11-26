@@ -1,0 +1,85 @@
+sim: command line: ./bin/sim-outorder -config ./configs/task1/base1.txt -redir:sim ./configs/task1/Stats_base1_stringsearch-cabce.txt ./apps/stringsearch/search_small 
+
+sim: simulation started @ Mon Nov 26 20:57:07 2018
+
+sim: ** starting performance simulation **
+
+sim: ** simulation statistics **
+
+# Statistics on Performance:
+
+sim_IPC                      0.0572 # instructions per cycle
+sim_CPI                     17.4704 # cycles per instruction
+sim_cycle                   5256574 # total simulation time in cycles
+sim_elapsed_time                  1 # total simulation time in seconds
+sim_inst_rate           300884.0000 # simulation speed (in insts/sec)
+sim_exec_BW                  0.0572 # total instructions (mis-spec + committed) per cycle
+sim_IPB                      4.1785 # instruction per branch
+
+# Statistics on  Commited and Executed instructions:
+
+sim_num_insn                 300884 # total number of instructions committed
+sim_total_insn               300883 # total number of instructions executed
+sim_num_icmp                 137467 # total number of integer insts committed
+sim_total_icmp               137528 # total number of integer insts executed
+sim_num_fcmp                      0 # total number of FP insts committed
+sim_total_fcmp                    0 # total number of FP insts executed
+sim_num_refs                  91283 # total number of loads and stores committed
+sim_total_refs                91283 # total number of loads and stores executed
+sim_num_branches              72008 # total number of branches committed
+sim_total_branches            72008 # total number of branches executed
+freq_icmp_exe          45.71 # Freqeuncy (%) of executed integer instructions
+freq_fcmp_exe           0.00 # Freqeuncy (%) of executed FP instructions
+freq_refs_exe          30.34 # Freqeuncy (%) of executed loads and stores
+freq_branches_exe      23.93 # Freqeuncy (%) of executed branch instructions
+
+# Statistics on Processor Core :
+
+busy_int_alu                 202862 # Cyles integer ALU(s) is busy
+busy_int_mul                   1219 # Cyles integer MULT/DIV(s) is busy
+busy_fp_alu                       0 # Cyles FP ALU(s) is busy
+busy_fp_mul                       0 # Cyles FP MULT/DIV(s) is busy
+IFQ_count                   1090028 # cumulative IFQ occupancy
+IFQ_fcount                    91125 # cumulative IFQ full count
+ifq_occupancy                0.2074 # avg IFQ occupancy (insn's)
+ifq_rate                     0.0572 # avg IFQ dispatch rate (insn/cycle)
+ifq_latency                  3.6228 # avg IFQ occupant latency (cycle's)
+ifq_full                     0.0173 # fraction of time (cycle's) IFQ was full
+RUU_count                   1130461 # cumulative RUU occupancy
+RUU_fcount                        0 # cumulative RUU full count
+ruu_occupancy                0.2151 # avg RUU occupancy (insn's)
+ruu_rate                     0.0572 # avg RUU dispatch rate (insn/cycle)
+ruu_latency                  3.7571 # avg RUU occupant latency (cycle's)
+ruu_full                     0.0000 # fraction of time (cycle's) RUU was full
+LSQ_count                    422278 # cumulative LSQ occupancy
+LSQ_fcount                        0 # cumulative LSQ full count
+lsq_occupancy                0.0803 # avg LSQ occupancy (insn's)
+lsq_rate                     0.0572 # avg LSQ dispatch rate (insn/cycle)
+lsq_latency                  1.4035 # avg LSQ occupant latency (cycle's)
+lsq_full                     0.0000 # fraction of time (cycle's) LSQ was full
+
+# Statistics on Branch Predictors :
+
+bpred_nottaken.lookups        99944 # total number of bpred lookups
+bpred_nottaken.updates        72008 # total number of updates
+bpred_nottaken.addr_hits        20878 # total number of address-predicted hits
+bpred_nottaken.dir_hits        20878 # total number of direction-predicted hits (includes addr-hits)
+bpred_nottaken.misses         51130 # total number of misses
+bpred_nottaken.pred_accuracy    0.4884 # branch prediction rate
+bpred_nottaken.bpred_addr_rate    0.2899 # branch address-prediction rate (i.e., addr-hits/updates)
+bpred_nottaken.bpred_dir_rate    0.2899 # branch direction-prediction rate (i.e., all-hits/updates)
+bpred_nottaken.used_ras.PP            0 # total number of RAS predictions used
+bpred_nottaken.ras_hits.PP            0 # total number of RAS hits
+bpred_nottaken.ras_rate.PP <error: divide by zero> # RAS prediction rate (i.e., RAS hits/used RAS)
+
+# Statistics on Level-1 and Level-2 Caches :
+
+il1.accesses                 469994 # total number of accesses
+il1.hits                     441218 # total number of hits
+il1.misses                    28776 # total number of misses
+il1.miss_rate           0.06 # miss rate (i.e., misses/ref)
+dl1.accesses                  91283 # total number of accesses
+dl1.hits                      90261 # total number of hits
+dl1.misses                     1022 # total number of misses
+dl1.miss_rate           0.01 # miss rate (i.e., misses/ref)
+
