@@ -1,0 +1,24 @@
+#!/bin/bash
+SHOME="."
+CFG=$2
+DIR=$1
+SIM="${SHOME}/bin/sim-outorder"
+
+CONFIG=" -config ${SHOME}/configs/${DIR}/${CFG}.txt "
+
+echo running app dijkstra
+${SIM} ${CONFIG} -redir:sim ${SHOME}/configs/${DIR}/Stats_${CFG}_dijkstra.txt ${SHOME}/apps/dijkstra/dijkstra_small  ${SHOME}/apps/dijkstra/input.dat 
+
+echo running app search_small
+${SIM} ${CONFIG} -redir:sim ${SHOME}/configs/${DIR}/Stats_${CFG}_stringsearch-cabce.txt ${SHOME}/apps/stringsearch/search_small  
+
+echo running app qsort
+${SIM} ${CONFIG} -redir:sim ${SHOME}/configs/${DIR}/Stats_${CFG}_qsort.txt ${SHOME}/apps/qsort/qsort_small  ${SHOME}/apps/qsort/input_small.dat > ${SHOME}/configs/${DIR}/qsort_small-output.txt
+
+echo running app gsm
+${SIM} ${CONFIG} -redir:sim ${SHOME}/configs/${DIR}/Stats_${CFG}_gsm-untoast.txt ${SHOME}/apps/gsm-untoast/untoast -fps -c ${SHOME}/apps/gsm-untoast/small.au.run.gsm > ${SHOME}/configs/${DIR}/gsm-untoast-output_small.decode.run
+
+echo running app jpeg
+${SIM}  ${CONFIG} -redir:sim ${SHOME}/configs/${DIR}/Stats_${CFG}_jpeg-cjpeg.txt ${SHOME}/apps/jpeg-cjpeg/cjpeg -dct int -progressive -opt -outfile ${SHOME}/configs/${DIR}/jpeg-cjpeg_output_small_encode.jpeg ${SHOME}/apps/jpeg-cjpeg/input_small.ppm
+
+

@@ -1,0 +1,35 @@
+#!/bin/bash
+SHOME="."
+CFG="profile"
+SIMPROF="${SHOME}/bin/sim-profile"
+
+CONFIG=" -config ${SHOME}/configs/${CFG}/${CFG}.txt "
+#echo running app dijkstra
+#${SIM} ${CONFIG} -redir:sim ${SHOME}/configs/${CFG}/dijkstra-stats.txt ${SHOME}/apps/dijkstra/dijkstra_small  ${SHOME}/apps/dijkstra/input.dat 
+
+echo dijkstra stats
+${SIMPROF} -brprof -iclass -redir:sim ${SHOME}/configs/${CFG}/dijkstra-stats.txt ${SHOME}/apps/dijkstra/dijkstra_small  ${SHOME}/apps/dijkstra/input.dat
+
+#echo running app search_small
+#${SIM} ${CONFIG} -redir:sim ${SHOME}/configs/${CFG}/stringsearch-cabce-stats.txt ${SHOME}/apps/stringsearch/search_small  
+
+echo search_small stats
+${SIMPROF} -brprof -iclass -redir:sim ${SHOME}/configs/${CFG}/stringsearch-cabce-stats.txt ${SHOME}/apps/stringsearch/search_small
+
+#echo running app qsort
+#${SIM} ${CONFIG} -redir:sim ${SHOME}/configs/${CFG}/qsort-stats.txt ${SHOME}/apps/qsort/qsort_small  ${SHOME}/apps/qsort/input_small.dat > ${SHOME}/configs/${CFG}/qsort_small-output.txt
+
+echo qsort stats
+${SIMPROF} -brprof -iclass -redir:sim ${SHOME}/configs/${CFG}/qsort-stats.txt ${SHOME}/apps/qsort/qsort_small  ${SHOME}/apps/qsort/input_small.dat
+
+#echo running app gsm
+#${SIM} ${CONFIG} -redir:sim ${SHOME}/configs/${CFG}/gsm-untoast-stats.txt ${SHOME}/apps/gsm-untoast/untoast -fps -c ${SHOME}/apps/gsm-untoast/small.au.run.gsm > ${SHOME}/configs/${CFG}/gsm-untoast-output_small.decode.run
+
+echo gsm stats
+${SIMPROF} -brprof -iclass -redir:sim ${SHOME}/configs/${CFG}/gsm-untoast-stats.txt ${SHOME}/apps/gsm-untoast/untoast -fps -c ${SHOME}/apps/gsm-untoast/small.au.run.gsm > ${SHOME}/configs/${CFG}/gsm-untoast-output_small.decode.run
+
+#echo Using configuration jpeg
+#${SIM}  ${CONFIG} -redir:sim ${SHOME}/configs/${CFG}/jpeg-cjpeg-stats.txt ${SHOME}/apps/jpeg-cjpeg/cjpeg -dct int -progressive -opt -outfile ${SHOME}/configs/${CFG}/jpeg-cjpeg_output_small_encode.jpeg ${SHOME}/apps/jpeg-cjpeg/input_small.ppm
+
+echo jpeg stats
+${SIMPROF} -brprof -iclass -redir:sim ${SHOME}/configs/${CFG}/jpeg-cjpeg-stats.txt ${SHOME}/apps/jpeg-cjpeg/cjpeg -dct int -progressive -opt -outfile ${SHOME}/configs/${CFG}/jpeg-cjpeg_output_small_encode.jpeg ${SHOME}/apps/jpeg-cjpeg/input_small.ppm -opt -outfile ${SHOME}/configs/${CFG}/jpeg-cjpeg_output_small_encode.jpeg
